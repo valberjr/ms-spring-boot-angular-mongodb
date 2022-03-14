@@ -1,0 +1,72 @@
+<div class="container">
+  <table mat-table [dataSource]="dataSource">
+    <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>#</th>
+      <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="establishmentYear">
+      <th mat-header-cell *matHeaderCellDef>Establishment Year</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.establishmentYear }}
+      </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="availableCourses">
+      <th mat-header-cell *matHeaderCellDef>Available Courses</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.availableCourses }}
+      </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="strength">
+      <th mat-header-cell *matHeaderCellDef>Strength</th>
+      <td mat-cell *matCellDef="let element">{{ element.strength }}</td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>actions</th>
+      <td mat-cell *matCellDef="let element">
+        <button
+          (click)="update(element)"
+          mat-icon-button
+          color="primary"
+          aria-label="Example icon button with a home icon"
+        >
+          <mat-icon matTooltip="Edit School">edit</mat-icon>
+        </button>
+        <button
+          (click)="delete(element.id)"
+          mat-icon-button
+          color="primary"
+          aria-label="Example icon button with a home icon"
+        >
+          <mat-icon matTooltip="Remove School">remove_circle</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+  <mat-paginator
+    [pageSizeOptions]="[2, 4, 6]"
+    showFirstLastButtons
+    aria-label="Select page of periodic elements"
+  >
+  </mat-paginator>
+</div>

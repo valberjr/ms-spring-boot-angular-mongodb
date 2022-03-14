@@ -1,0 +1,17 @@
+.mat-card-header {
+  text-align: center;
+  justify-content: center;
+}
+
+/* .mat-card-actions {
+  justify-content: flex-end;
+} */
+
+.form {
+  margin-top: 5em;
+  margin-bottom: 2em;
+}
+
+/* .mat-flat-button {
+  width: 15em !important;
+} */
