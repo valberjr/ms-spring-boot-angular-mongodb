@@ -25,6 +25,8 @@ export class FormComponent implements OnInit {
 
   courseForm: any;
 
+  isDisabled: boolean = true;
+
   constructor(private fb: FormBuilder, private schoolService: SchoolService) {}
 
   ngOnInit(): void {
